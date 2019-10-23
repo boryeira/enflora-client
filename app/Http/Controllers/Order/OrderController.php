@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Order\Order;
+use App\Models\Product\Product;
 use Auth;
 
 class OrderController extends Controller
@@ -41,7 +42,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('orders.create');
+        $products = Product::all();
+        return view('orders.create')->with('products', $products);
     }
 
     /**

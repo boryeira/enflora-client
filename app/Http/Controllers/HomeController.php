@@ -32,11 +32,7 @@ class HomeController extends Controller
 
     public function go()
     {
-        $orderItems = OrderItem::all();
-        foreach($orderItems as $item){
-            $item->product_id = $item->batch_id;
-            $item->save();
-        }
+
         
         return 'holas! go';
     }
