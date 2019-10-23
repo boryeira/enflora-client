@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 
+use App\Models\Order\OrderItem;
+
 class HomeController extends Controller
 {
     /**
@@ -26,5 +28,16 @@ class HomeController extends Controller
     {
 // 
         return view('home');
+    }
+
+    public function go()
+    {
+        $orderItems = OrderItem::all();
+        foreach($orderItems as $item){
+            $item->product_id = $item->batch_id;
+            $item->save();
+        }
+        
+        return 'holas! go';
     }
 }

@@ -33,5 +33,10 @@ class Order extends Model
       return $this->belongsTo('App\Models\User\User');
   }
 
+  public function items()
+  {
+    return $this->hasMany('App\Models\Order\OrderItem');
+  }
+
 
 }

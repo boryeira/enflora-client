@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
     <div class="row justify-content-center">
             <div class="col-md-12">
 
@@ -30,7 +30,10 @@
                         <ul class="list-group mb-4">
                             @foreach (Auth::user()->activeOrders as $order)
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Orden #{{$order->id}}
+                                    <a class href="{{Route("orders.show",['order'=>$order->id])}}" style="color: inherit; text-decoration: none;">
+                                        Orden #{{$order->id}}  
+                                    </a>
+                                    <span class="pull-right text-{{$order->status[1]}}">{{$order->status[0]}} </span>
                                 </li>
                             @endforeach
                         </ul>
@@ -55,5 +58,5 @@
         </div> --}}
 
     </div>
-</div>
+
 @endsection

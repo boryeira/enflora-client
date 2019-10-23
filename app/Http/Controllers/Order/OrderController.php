@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Order;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Order\Order;
 use Auth;
 
@@ -10,10 +11,10 @@ class OrderController extends Controller
 {
 
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show all orders.
