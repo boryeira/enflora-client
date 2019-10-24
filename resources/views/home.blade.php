@@ -37,7 +37,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                        <button class="btn btn-primary btn-block">Nueva Orden</button>
+                    <a class="btn btn-primary btn-block" href="{{route('orders.create')}}">Nueva Orden</a>
                     </div>
                 </div>
         </div>

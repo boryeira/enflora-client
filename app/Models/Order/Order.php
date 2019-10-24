@@ -11,6 +11,8 @@ class Order extends Model
   protected $dates = [
       'delivery_date','pay_date'
   ];
+
+
   public function getStatusAttribute($value)
   {
     $rawStatus = [
@@ -23,10 +25,6 @@ class Order extends Model
   }
 
 
-  // public function items()
-  // {
-  //   return $this->hasMany('App\Models\OrderItem');
-  // }
 
   public function user()
   {
