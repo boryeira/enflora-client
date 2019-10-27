@@ -1,32 +1,61 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row justify-content-center">
-    @foreach ($products as $product)
-    <div class="col-md-4">
-        <div class="card card-air centered mb-4">
-            <div class="rel">
-                <img class="card-img-top" src="{{$product->img}}" alt="image" >
-            </div>
-            <div class="card-body ">
-                <h5 class="card-title">{{$product->name}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted"><span class="text-{{$product->type[1]}}">{{$product->type[0]}}</span><span class="float-right">${{number_format($product->value, 0, ',', '.')}}</span></h6>
-                <div class="form-group">
-                    <input type="number" class="form-control input-quantity" min="0" name="{{$product->id}}">
+<form class="form" action="{{route('orders.store')}}" method="POST">
+    @csrf
+    <div class="row justify-content-center">
+
+        @foreach ($products as $product)
+        <div class="col-md-4">
+            <div class="card card-air centered mb-4">
+                <div class="rel">
+                    <img class="card-img-top" src="{{$product->img}}" alt="image" >
                 </div>
-                
+                <div class="card-body ">
+                    <h5 class="card-title">{{$product->name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><span class="text-{{$product->type[1]}}">{{$product->type[0]}}</span><span class="float-right">${{number_format($product->value, 0, ',', '.')}}</span></h6>
+                    <div class="form-group">
+                    <input type="number" class="form-control input-quantity orderInput" min="0" name="{{$product->id}}" data-price="{{$product->value}}">
+                    </div>
+                    
+                </div>
             </div>
-
-            
-            
         </div>
-    </div>
-    @endforeach
-</div>
+        @endforeach
 
-<footer class="fixed-bottom text-center">
-    <div class="bg-primary">
-      <button class="btn btn-info btn-block btn-air" type="submit">ORDEN TOTAL: $<span id="order_price">0</span></button>
     </div>
-</footer>
+
+    <footer class="fixed-bottom text-center">
+    <div class="bg-primary">
+        <button class="btn btn-primary btn-block btn-air" type="submit">ORDEN TOTAL: $<span id="order_price">0</span></button>
+    </div>
+    </footer>
+</form>
+@endsection
+
+@section('css')
+
+@endsection
+
+@section('js')
+  <script src="{{ asset('js/jquery.bootstrap-touchspin.js') }}" defer></script>
+
+  <script defer>
+    window.onload = function() {
+      $( document ).ready(function() {
+        $('.orderInput').bind('input', function() {
+          var totalPoints = 0;
+          var totalPrice = 0;
+          $('.orderInput').each(function(){
+            if($(this).val()=='')$(this).val(0);
+                totalPoints = parseFloat($(this).val()) + totalPoints;
+                totalPrice = parseFloat($(this).val())*$(this).data('price') + totalPrice;
+          });
+
+          $('#order_price').text(totalPrice);
+        });
+
+      });
+    };
+  </script>
 @endsection

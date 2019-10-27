@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @yield('js')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,14 +21,18 @@
    
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    @yield('css')
 
 </head>
 <body>
     <div id="app">
-
+        @auth
         @include('layouts.header')
+        @endauth
         <main class="py-4">
+            
             <div class="container">
+                @include('layouts.alerts')
                 @yield('content')
             </div>
         </main>

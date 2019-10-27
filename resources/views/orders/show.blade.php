@@ -21,8 +21,12 @@
 
         </div>
         @if($order->status[2] == 2)
-        <a class="btn btn-success btn-block">Pagar</a>
-        <a class="btn btn-danger btn-block">Eliminar</a>
+        <a class="btn btn-success btn-block mb-2">Pagar</a>
+        <form id="formeliminar" action="{{route('orders.destroy',['order'=>$order->id])}}" method="POST" >
+            {{ method_field('DELETE') }}
+            @csrf
+            <button class="btn btn-danger btn-block" id="eliminar"  type="submit" >Eliminar</button>
+        </form>
         @endif
     </div>
 </div>
