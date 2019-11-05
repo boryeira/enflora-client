@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-      
+        $this->middleware('auth');
     }
 
     /**
@@ -28,12 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (Auth::check()) {
-            $orders = Auth::user()->orders;
-            return view('home')->with('orders',$orders);
-        } else {
-            return view('welcome');
-        }
+
+        $orders = Auth::user()->orders;
+        return view('home')->with('orders',$orders);
 
     }
 
