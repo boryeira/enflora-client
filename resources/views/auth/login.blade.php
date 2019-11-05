@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <img src="{{asset('img/enflora.png')}}" width="250" style="margin-bottom:20px;margin-top:20px;"/>
+            <img src="{{asset('img/enflora.png')}}" class="mx-auto d-block"  width="250" />
             <div class="card">
                 {{-- <div class="card-header">Ingresar</div> --}}
 
