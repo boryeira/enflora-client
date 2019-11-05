@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <img src="{{asset('img/enflora.png')}}" width="250" style="margin-bottom:20px;margin-top:20px;"/>
             <div class="card">
-                <div class="card-header">Ingresar</div>
+                {{-- <div class="card-header">Ingresar</div> --}}
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -55,7 +55,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    Ingresar
                                 </button>
 
                                 {{-- @if (Route::has('password.request'))
