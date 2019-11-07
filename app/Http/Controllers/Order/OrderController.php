@@ -90,7 +90,7 @@ class OrderController extends Controller
               $item->status = 1;
               $item->img = $product->img;
               $item->save();
-              $product->available = $product->available - $q;
+              $product->consumed = $product->consumed + $q;
               if($product->available == 0){
                 $product->status = 2 ;
               }
@@ -110,7 +110,7 @@ class OrderController extends Controller
     {
       foreach ($order->items as  $item) {
         $product = $item->product;
-        $product->available = $product->available + $item->quantity;
+        $product->consumed = $product->consumed - $item->quantity;
         $product->save();
         $item->delete();
       }

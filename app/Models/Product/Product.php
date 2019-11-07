@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $appends = array('available');
+
+    public function getAvailableAttribute()
+    {
+      $available = $this->quantity - $this->consumed;
+      return $available;
+    }
+
     public function getTypeAttribute($value)
     {
       $rawType = [
