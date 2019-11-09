@@ -33,7 +33,7 @@
         
         </div>
         @if($order->status[2] == 2)
-        <a class="btn btn-success btn-block mb-2">Pagar</a>
+        <a class="btn btn-success btn-block mb-2" href="{{route('orders.payflow',['order'=>$order->id])}}">Pagar</a>
         <form id="formeliminar" action="{{route('orders.destroy',['order'=>$order->id])}}" method="POST" >
             {{ method_field('DELETE') }}
             @csrf

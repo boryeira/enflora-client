@@ -26,6 +26,7 @@
     </div>
 
     <footer class="fixed-bottom text-center">
+      <input hidden value="0" id="total_value" name="total">
     <div class="bg-primary">
         <button class="btn btn-primary btn-block btn-air" type="submit">ORDEN TOTAL: $<span id="order_price">0</span></button>
     </div>
@@ -53,6 +54,7 @@
           });
 
           $('#order_price').text(totalPrice);
+          $('#total_value').val(totalPrice);
         });
 
       });

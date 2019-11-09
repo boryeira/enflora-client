@@ -18,10 +18,10 @@ Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/go', 'HomeController@go')->name('go');
 
 Route::resource('/orders', 'Order\OrderController');
-Route::get('/orders/{order}/payflow', 'FlowController@payOrder')->name('orders.payflow');
+Route::get('/orders/{order}/payflow', 'Flow\FlowController@payOrder')->name('orders.payflow');
 
-Route::post('/flow/return', 'FlowController@orderReturn')->name('orders.returnflow');
-Route::post('/flow/confirm', 'FlowController@orderConfirm')->name('orders.confirmflow');
+Route::post('/flow/return', 'Flow\FlowController@orderReturn')->name('orders.returnflow');
+Route::post('/flow/confirm', 'Flow\FlowController@orderConfirm')->name('orders.confirmflow');
 
 
 

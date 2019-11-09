@@ -56,18 +56,27 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+      
         $user = Auth::User();
         $items = $request->all();
         unset($items['_token']);
         $items = array_filter($items);
+        // $total = 0;
+        if($request->total < 20000){
+          return Redirect::back()->withErrors(array('zero' => '$20.000 es el minimo de compra'));
+        }
+        unset($items['total']);
+
         if(count($items)==0){
             return Redirect::back()->withErrors(array('zero' => 'Debe seleccionar ingresar la cantidad'));
         }
         foreach($items as $key => $q){
+            
             $product = Product::find($key);
+            
             if($product->available < $q)
             {
-                return Redirect::back()->withErrors(array('quantity' => 'Supera el stock maximo de '.$product->name));
+                return Redirect::back()->withErrors(array('quantity' => 'Supera el stock de '.$product->name));
             }
 
         }
