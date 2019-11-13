@@ -2,26 +2,12 @@
 
 @section('content')
 
-    {{-- <div class="row justify-content-center">
-            <div class="col-md-6">
-
-                    <div class="card text-white bg-primary mb-3">
-                        <div class="card-body">
-                            @if (session('status'))
-                                <div class="alert alert-success" role="alert">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
-                            Nuevas funciones para el sistema enflora 
-                        </div>
-                    </div>
-                </div>
-    </div> --}}
     <div class="row justify-content-center">
         <div class="col-md-6">
-                <h5>Ordenes Activas</h5>
+                
                 <div class="card">
                     <div class="card-body">
+                        <h5>Ordenes Activas</h5>
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
@@ -44,11 +30,12 @@
                     </div>
                 </div>
         </div>
-
+{{-- 
         <div class="col-md-6">
-                <h5>Historial</h5>
+                
                 <div class="card">
                     <div class="card-body">
+                        <h5>Historial</h5>
                         <ul class="list-group mb-4">
                             @foreach (Auth::user()->oldOrders as $order)
                             <li class="list-group-item">
@@ -64,7 +51,7 @@
                         </ul>
                     </div>
                 </div>
-        </div>
+        </div> --}}
 
     </div>
 

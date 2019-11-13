@@ -9,14 +9,14 @@
         <li class="nav-item active">
         <a class="nav-link" href="{{url('/')}}">Inicio</a>
         </li>
-        {{-- <li class="nav-item">
-          <a class="nav-link" href="{{url('/')}}">Ordenes</a>
-        </li> --}}
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Variedades</a>
         </li>
         <li class="nav-item">
             <a class="nav-link disabled" href="#">Receta Medica</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{{url('/profile')}}">Perfil</a>
         </li>
       </ul>
 

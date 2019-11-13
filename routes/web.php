@@ -15,6 +15,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/profile', 'User\UserController@profile')->name('profile');
 // Route::get('/go', 'HomeController@go')->name('go');
 
 Route::resource('/orders', 'Order\OrderController');
