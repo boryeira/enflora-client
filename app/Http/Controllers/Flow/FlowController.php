@@ -33,7 +33,7 @@ class FlowController extends Controller
 
           try {
             $paymentResponse = $this->flow->payment()->commit([
-                'commerceOrder'     => 1000+$order->id,
+                'commerceOrder'     => $order->id,
                 'subject'           => 'Membresía',
                 'amount'            => $order->amount,
                 'email'             => $order->user->email,
