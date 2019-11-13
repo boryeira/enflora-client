@@ -56,7 +56,7 @@
                                     <a class="row" href="{{Route("orders.show",['order'=>$order->id])}}" style="width: 100%;color: inherit; text-decoration: none;">
                                        
                                         <span class="col">Orden #{{$order->id}}  </span>  
-                                        <span class="col text-right text-{{$order->status['css']}}">{{$order->status['client']}} </span>
+                                        <span class="col text-right text-{{$order->status['css']}}">{{$order->delivery_date->format('d-m-Y')}} </span>
                                     </a>
                                     
                                 </li>
