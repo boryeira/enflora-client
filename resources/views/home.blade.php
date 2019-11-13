@@ -42,20 +42,23 @@
                 </div>
         </div>
 
-        {{-- <div class="col-md-6">
+        <div class="col-md-6">
                 <h5>Historial</h5>
                 <div class="card">
                     <div class="card-body">
                         <ul class="list-group mb-4">
                             @foreach (Auth::user()->oldOrders as $order)
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Orden #{{$order->id}}
-                                </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a class href="{{Route("orders.show",['order'=>$order->id])}}" style="color: inherit; text-decoration: none;">
+                                    Orden #{{$order->id}}  
+                                </a>
+                                <span class="pull-right text-{{$order->status['css']}}">{{$order->status['client']}} - {{$order->delivery_date->format('d-m-Y')}} </span>
+                            </li>
                             @endforeach
                         </ul>
                     </div>
                 </div>
-        </div> --}}
+        </div>
 
     </div>
 
