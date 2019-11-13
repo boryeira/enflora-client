@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="row justify-content-center">
+    {{-- <div class="row justify-content-center">
             <div class="col-md-6">
 
                     <div class="card text-white bg-primary mb-3">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-    </div>
+    </div> --}}
     <div class="row justify-content-center">
         <div class="col-md-6">
                 <h5>Ordenes Activas</h5>
