@@ -29,11 +29,14 @@
                         @endif
                         <ul class="list-group mb-4">
                             @foreach (Auth::user()->activeOrders as $order)
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <a class href="{{Route("orders.show",['order'=>$order->id])}}" style="color: inherit; text-decoration: none;">
-                                        Orden #{{$order->id}}  
+                                <li class="list-group-item">
+
+                                    <a class="row" href="{{Route("orders.show",['order'=>$order->id])}}" style="width: 100%;color: inherit; text-decoration: none;">
+                                       
+                                        <span class="col">Orden #{{$order->id}}  </span>  
+                                        <span class="col text-right text-{{$order->status['css']}}">{{$order->status['client']}} </span>
                                     </a>
-                                    <span class="pull-right text-{{$order->status['css']}}">{{$order->status['client']}} </span>
+                                    
                                 </li>
                             @endforeach
                         </ul>
@@ -48,12 +51,15 @@
                     <div class="card-body">
                         <ul class="list-group mb-4">
                             @foreach (Auth::user()->oldOrders as $order)
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a class href="{{Route("orders.show",['order'=>$order->id])}}" style="color: inherit; text-decoration: none;">
-                                    Orden #{{$order->id}}  
-                                </a>
-                                <span class="pull-right text-{{$order->status['css']}}">{{$order->status['client']}} - {{$order->delivery_date->format('d-m-Y')}} </span>
-                            </li>
+                            <li class="list-group-item">
+
+                                    <a class="row" href="{{Route("orders.show",['order'=>$order->id])}}" style="width: 100%;color: inherit; text-decoration: none;">
+                                       
+                                        <span class="col">Orden #{{$order->id}}  </span>  
+                                        <span class="col text-right text-{{$order->status['css']}}">{{$order->status['client']}} </span>
+                                    </a>
+                                    
+                                </li>
                             @endforeach
                         </ul>
                     </div>
