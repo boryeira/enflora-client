@@ -7,11 +7,11 @@
     <div class="collapse navbar-collapse" id="navbarColor03">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio</a>
+        <a class="nav-link" href="{{url('/')}}">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Ordenes</a>
-        </li>
+        {{-- <li class="nav-item">
+          <a class="nav-link" href="{{url('/')}}">Ordenes</a>
+        </li> --}}
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Variedades</a>
         </li>
