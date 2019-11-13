@@ -63,7 +63,7 @@ class FlowController extends Controller
       if($paymentData['date']==null){
         return Redirect::route('orders.index')->withErrors(array('flow' =>'no se realizo el pago'));
       } else {
-        if($order->status[2]==2){
+        if($order->status['id']==2){
           $order->status = 3;
           $order->pay_date = $paymentData['date'];
           $order->save();
@@ -87,7 +87,7 @@ class FlowController extends Controller
             'data' => 'ok',
         ]);
       } else {
-        if($order->status[2]==2){
+        if($order->status['id']==2){
           $order->status = 3;
           $order->pay_date = $paymentData['date'];
           $order->save();

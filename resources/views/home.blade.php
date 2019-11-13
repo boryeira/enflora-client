@@ -33,7 +33,7 @@
                                     <a class href="{{Route("orders.show",['order'=>$order->id])}}" style="color: inherit; text-decoration: none;">
                                         Orden #{{$order->id}}  
                                     </a>
-                                    <span class="pull-right text-{{$order->status[1]}}">{{$order->status[0]}} </span>
+                                    <span class="pull-right text-{{$order->status['css']}}">{{$order->status['client']}} </span>
                                 </li>
                             @endforeach
                         </ul>
