@@ -69,7 +69,7 @@ class FlowController extends Controller
           $order->save();
         }
         Session::flash('success','Pago realizado con éxito - fecha '.$paymentData['date']);
-        return Redirect::route('orders.index');
+        return Redirect::route('orders.show',['order'=>$order->id]);
       }
       
     }
