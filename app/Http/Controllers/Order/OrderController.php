@@ -45,7 +45,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        $products = Product::all();
+        $products = Product::where('status',1)->get();
         // dd($products);
         return view('orders.create')->with('products', $products);
     }
