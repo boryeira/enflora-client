@@ -17,10 +17,10 @@ class Product extends Model
     public function getTypeAttribute($value)
     {
       $rawType = [
-        '1'=> ['Flor','success','1'],
-        '2'=> ['Extracto','warning','2'],
-        '3'=> ['Comestible','danger','3'],
-        '4'=> ['Accesorio','primary','4']
+        '1'=> ['id'=>'1','name'=>'Flor','css'=>'success'],
+        '2'=> ['id'=>'2','name'=>'Extracto','css'=>'warning'],
+        '3'=> ['id'=>'3','name'=>'Comestible','css'=>'danger'],
+        '4'=> ['id'=>'4','name'=>'Accesorio','css'=>'primary'],
       ];
       return $rawType[$value];
     }
