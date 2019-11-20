@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @if(count(Auth::user()->activePrescription)>0)
+    @if(Auth::user()->activePrescription == null)
     <div class="row justify-content-center">
         <div class="col-sm-6" >
         <div class="alert alert-danger text-center ">

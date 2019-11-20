@@ -24,5 +24,10 @@ class PrescriptionController extends Controller
       return view('users.prescription')->with('prescription',$prescription);
   }
 
+  public function store()
+  {
+    //
+  }
+
 
 }
