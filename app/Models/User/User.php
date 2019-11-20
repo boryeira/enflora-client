@@ -41,6 +41,11 @@ class User extends Authenticatable
         'full_name',
     ];
 
+    //getters
+    public function getFullNameAttribute()
+    {
+        return $this->first_name.' '.$this->last_name;
+    }
     
     public function orders()
     {
@@ -54,11 +59,21 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Order\Order')->where('status',4);
     }
-
-
-    //getters
-    public function getFullNameAttribute()
+    public function prescriptions()
     {
-        return $this->first_name.' '.$this->last_name;
+        return $this->hasMany('App\Models\User\Prescription');
     }
+
+    public function activePrescription()
+    {
+        return $this->hasOne('App\Models\User\Prescription')->whereDate('start', '>=', now())->whereDate('end' ,'<=' , now())->where('status',2);
+    }
+    public function revPrescription()
+    {
+        return $this->hasMany('App\Models\User\Prescription')->where('status',1);
+    }
+
+
+
+    
 }

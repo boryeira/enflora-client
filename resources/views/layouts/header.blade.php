@@ -13,7 +13,7 @@
           <a class="nav-link disabled" href="#">Variedades</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" href="#">Receta Medica</a>
+            <a class="nav-link" href="{{route('prescription.show')}}">Receta Medica</a>
         </li>
         <li class="nav-item">
             <a class="nav-link " href="{{route('auth.profile')}}">Perfil</a>

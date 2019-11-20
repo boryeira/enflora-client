@@ -17,6 +17,8 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/profile', 'User\UserController@profile')->name('auth.profile');
 Route::get('/password', 'User\UserController@passwordUpdate')->name('auth.password');
+Route::get('/prescription', 'User\PrescriptionController@show')->name('prescription.show');
+Route::post('/prescription', 'User\PrescriptionController@store')->name('prescription.store');
 // Route::get('/go', 'HomeController@go')->name('go');
 
 Route::resource('/orders', 'Order\OrderController');
