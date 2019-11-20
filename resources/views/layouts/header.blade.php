@@ -16,7 +16,7 @@
             <a class="nav-link disabled" href="#">Receta Medica</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="{{url('/profile')}}">Perfil</a>
+            <a class="nav-link " href="{{route('auth.profile')}}">Perfil</a>
         </li>
       </ul>
       <ul class="nav navbar-nav">

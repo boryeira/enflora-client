@@ -1,4 +1,3 @@
-@auth
 
 @if ($errors->any())
   <div class="row">
@@ -28,28 +27,31 @@
 @endif
 
 @if(Auth::user()->email_verified_at == null)
-<div class="row justify-content-center">
-  <div class="col-sm-6" >
+<div class="row">
+  <div class="col-sm-12" >
     <div class="alert alert-warning">
-      <h5>Cambia tu contraseña</h5>
-            <form action="{{route('auth.password')}}" class="row">
+      <div class="row">
+        <div class="col-6"> <p>Debes actualizar tu contraseña.</p></div>
+        <div class="col-6"> 
+            <form action="{{route('auth.password')}}">
                 @csrf
-                <div class="form-group col-4">
+                <div class="form-group">
                   <label>Contraseña</label>
                   <input class="form-control" name="password" type="password">
                 </div>
-                <div class="form-group col-4">
-                    <label>Repetir</label>
+                <div class="form-group">
+                    <label>Repetir Contraseña</label>
                   <input class="form-control" name="password_confirmation" type="password" >
                 </div>  
-                <div class="form-group col-3 " >
-                  <button class="btn btn-success mt-4" type="submit" >Actualizar</button>
+                <div class="form-group">
+                  <button class="btn btn-success" type="submit" >Actualizar</button>
                 </div>         
-            </form>
+              </form>
+        </div>
+      </div>
+           
 
     </div>
   </div>
 </div>
 @endif
-
-@endAuth

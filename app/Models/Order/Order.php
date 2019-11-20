@@ -20,8 +20,8 @@ class Order extends Model
       '2'=> ['id'=>'2','admin'=>'Pendiente','client'=>'Pendiente pago','css'=>'secondary'],
       '3'=> ['id'=>'3','admin'=>'Pagado','client'=>'Pendiente de entrega','css'=>'success'],
       '4'=> ['id'=>'4','admin'=>'Entregado','client'=>'Entregado','css'=>'info'],
-
     ];
+    
     return $rawStatus[$value];
   }
 

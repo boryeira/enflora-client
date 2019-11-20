@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Redirect;
 use Auth;
 use Session;
+use Validator;
+use Hash;
 
 
 class UserController extends Controller
@@ -28,6 +30,15 @@ class UserController extends Controller
 
   public function passwordUpdate(Request $request)
   {
+    $validator = Validator::make($request->all(), [
+      'password' => 'required|confirmed',
+  ]);
+
+  if ($validator->fails()) {
+      return redirect::back()
+                  ->withErrors($validator)
+                  ->withInput();
+  }
     $user = Auth::user();
     $user->password = Hash::make($request->password);
     $user->email_verified_at = now();
