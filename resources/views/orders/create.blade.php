@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-body ">
                     <h5 class="card-title">{{$product->name}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><span class="text-{{$product->type[1]}}">{{$product->type[0]}}</span><span class="float-right">${{number_format($product->value, 0, ',', '.')}}</span></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><span class="text-{{$product->type['css']}}">{{$product->type['name']}}</span><span class="float-right">${{number_format($product->value, 0, ',', '.')}}<small>/{{$product->unit['singular']}}</small></span></h6>
                     <div class="form-group">
                     <input type="number" class="form-control input-quantity orderInput" min="0" name="{{$product->id}}" data-price="{{$product->value}}">
                     </div>

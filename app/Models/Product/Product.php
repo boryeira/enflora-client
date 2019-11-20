@@ -24,4 +24,24 @@ class Product extends Model
       ];
       return $rawType[$value];
     }
+    public function getStatusAttribute($value)
+    {
+      $rawStatus = [
+        '1'=> ['id'=>'1','name'=>'Activo','css'=>'success'],
+        '2'=> ['id'=>'2','name'=>'Inactivo','css'=>'danger'],
+        '3'=> ['id'=>'3','name'=>'Pre-compra','css'=>'info'],
+      ];
+      return $rawStatus[$value];
+    }
+
+    public function getUnitAttribute($value)
+    {
+      $rawStatus = [
+        '1'=> ['id'=>'1','singular'=>'Unidad','plural'=>'Unidades'],
+        '2'=> ['id'=>'2','singular'=>'Gramo','plural'=>'Gramos'],
+      ];
+      return $rawStatus[$value];
+    }
+
+
 }

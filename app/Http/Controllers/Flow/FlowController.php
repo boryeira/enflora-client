@@ -13,11 +13,12 @@ use Redirect;
 
 class FlowController extends Controller
 {
+  
     public $flow;
     public function __construct()
     {
         
-      $flow = Flow::make('production', [
+      $this->flow = Flow::make('production', [
         'apiKey'    => '7B19A4CF-F041-40C4-9488-4180L75A6AAA',
         'secret'    => '8a8c824cd4550b1ee4d581a1d3404d9d640638b0',
       ]);
