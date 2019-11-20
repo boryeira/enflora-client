@@ -95,7 +95,7 @@ class OrderController extends Controller
               $item->product_id = $product->id;
               $item->quantity = $q;
               $item->amount = $product->value*$q;
-              $item->unit = $product->unit;
+              $item->unit = $product->unit['id'];
               $item->status = 1;
               $item->img = $product->img;
               $item->save();
