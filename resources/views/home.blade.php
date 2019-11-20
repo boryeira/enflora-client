@@ -7,7 +7,7 @@
         <div class="col-sm-6" >
         <div class="alert alert-danger text-center ">
             <h5>Debes tener una receta medica vigente para mantener tu membresia.</h5>
-            <p>Por favor regularice su situacion, en lo contrario su cuenta puede ser dada de baja</p>
+            <p>Regularice su situacion, en lo contrario su cuenta puede ser dada de baja</p>
             <a class="btn btn-primary btn-block" href="https://www.recetacannabis.cl/">Obtener Receta medica</a>
         <small>*si ya tienes tu receta medica debes subir una copia digital <a href="{{route('prescription.show')}}">aqui</a></small>
         </div>
