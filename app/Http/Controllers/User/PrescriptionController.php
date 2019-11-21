@@ -10,6 +10,7 @@ use Auth;
 use Session;
 use Validator;
 use Storage;
+use Image;
 
 
 
@@ -44,7 +45,8 @@ class PrescriptionController extends Controller
       $prescription->user_id = Auth::user()->id;
       $prescription->save();
 
-      $storage = Storage::put('public/user/'.Auth::user()->id.'/'.$prescription->id.'.jpg', $request->prescription);
+      $resize = Image::make($request->prescription)->fit(680, 450)->encode('jpg');
+      $storage = Storage::put('public/user/'.Auth::user()->id.'/'.$prescription->id.'.jpg', $resize);
       $prescription->file = url('/').'/storage/user/'.Auth::user()->id.'/'.$prescription->id.'.jpg';
       $prescription->save();
       Session::flash('success','Receta medica subida con éxito. Nos comunicaremos con usted cuando este validada.');
