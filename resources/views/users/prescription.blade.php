@@ -26,7 +26,8 @@
                         </form>
                     </div>
                     @else 
-                    <h5>Receta médica en revisión, nos comunicaremos con usted cuando el proceso esté listo.</h5>
+                    <h5>Receta médica en revisión</h5>
+                    <p> nos comunicaremos con usted cuando el proceso esté listo.</p>
                     @endif
 
                 </div>
@@ -38,12 +39,12 @@
             <div class="col-sm-6" >
                 <div class="card">        
                     <div class="card-body">
-                        id {{$prescription->id}}
+                        <h5>Receta medica valida</h5>
                     </div>
                 </div>
                 <div class="card mt-2">        
                         <div class="card-body">
-                            foto
+                        <img src="{{$prescription->file}}" width="400">
                         </div>
                     </div>
             </div>
