@@ -43,6 +43,7 @@ class PrescriptionController extends Controller
     if($request->prescription) {
       $prescription = new Prescription;
       $prescription->user_id = Auth::user()->id;
+      $prescription->status = 1;
       $prescription->save();
 
       $resize = Image::make($request->prescription)->fit(450, 680)->encode('jpg');
