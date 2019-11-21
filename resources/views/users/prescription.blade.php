@@ -42,9 +42,10 @@
                         <h5>Receta medica valida</h5>
                     </div>
                 </div>
-                <div class="card mt-2">        
+                <div class="card mt-2">       
+                        <img src="{{$prescription->file}}" class="card-img-top"> 
                         <div class="card-body">
-                        <img src="{{$prescription->file}}" width="400">
+                       
                         </div>
                     </div>
             </div>
