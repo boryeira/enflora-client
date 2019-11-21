@@ -66,7 +66,7 @@ class User extends Authenticatable
 
     public function activePrescription()
     {
-        return $this->hasOne('App\Models\User\Prescription')->whereDate('start', '>=', now())->whereDate('end' ,'<=' , now())->where('status',2);
+        return $this->hasOne('App\Models\User\Prescription')->whereDate('start', '<=', now())->whereDate('end' ,'>=' , now())->where('status',2);
     }
     public function revPrescription()
     {
