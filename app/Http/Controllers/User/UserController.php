@@ -32,18 +32,18 @@ class UserController extends Controller
   {
     $validator = Validator::make($request->all(), [
       'password' => 'required|confirmed',
-  ]);
+    ]);
 
-  if ($validator->fails()) {
-      return redirect::back()
-                  ->withErrors($validator)
-                  ->withInput();
-  }
-    $user = Auth::user();
-    $user->password = Hash::make($request->password);
-    $user->email_verified_at = now();
-    $user->save();
-    return Redirect::back();
+    if ($validator->fails()) {
+        return redirect::back()
+                    ->withErrors($validator)
+                    ->withInput();
+    }
+      $user = Auth::user();
+      $user->password = Hash::make($request->password);
+      $user->email_verified_at = now();
+      $user->save();
+      return Redirect::back();
 
   }
 

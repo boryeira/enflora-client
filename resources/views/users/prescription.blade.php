@@ -21,7 +21,7 @@
                         <p>La receta médica será primero validada por nuestro equipo. Nos comunicaremos con usted cuando el proceso haya terminado.</p>
                         <form action="{{route('prescription.store')}}" method="POST"  enctype="multipart/form-data">
                             @csrf
-                            <input type="file" class="form-controll">
+                            <input type="file" class="form-controll" name="prescription">
                             <button class="btn btn-success" type="submit">Subir receta médica</button>
                         </form>
                     </div>
