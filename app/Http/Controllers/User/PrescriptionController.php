@@ -46,7 +46,7 @@ class PrescriptionController extends Controller
       $prescription->status = 1;
       $prescription->save();
 
-      $resize = Image::make($request->prescription)->fit(450, 680)->encode('jpg');
+      $resize = Image::make($request->prescription)->encode('jpg');
       $storage = Storage::put('public/user/'.Auth::user()->id.'/'.$prescription->id.'.jpg', $resize);
       $prescription->file = url('/').'/storage/user/'.Auth::user()->id.'/'.$prescription->id.'.jpg';
       $prescription->save();
